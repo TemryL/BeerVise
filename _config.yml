@@ -1,11 +1,8 @@
 title:              BeerVise
-description:        Data story for our project of the course CS-401/Applied Data Analysis (ADA)
+description:        Pick the right beer for you!
 author:             TooHotToHoot Team
 baseurl:            "/BeerVise"
 url:                "https://temryl.github.io"
-
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
