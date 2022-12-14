@@ -30,7 +30,7 @@ layout: default
         {{ content }}
 
         <!-- Post List -->
-        {% for post in site.posts reversed%}
+        {% for post in site.posts reversed %}
 
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
