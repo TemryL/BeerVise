@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+  {% else %}
+  <header class="masthead">
+    {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>{{ site.title }}</h1>
+            {% if site.description %}
+            <span class="subheading">{{ site.description }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        {{ content }}
+
+        <!-- Home Chapter List -->
+        {% for chapter in site.chapters limit : 5 %}
+
+        <article class="chapter-preview">
+          <a href="{{ chapter.url | prepend: site.baseurl | replace: '//', '/' }}">
+            <h2 class="chapter-title">{{ chapter.title }}</h2>
+            {% if chapter.subtitle %}
+            <h3 class="chapter-subtitle">{{ chapter.subtitle }}</h3>
+            {% else %}
+            <h3 class="chapter-subtitle">{{ chapter.excerpt | strip_html | truncatewords: 15 }}</h3>
+            {% endif %}
+          </a>
+          <p class="chapter-meta">
+            {% include read_time.html content=chapter.content %}            
+          </p>
+        </article>
+
+        <hr>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
