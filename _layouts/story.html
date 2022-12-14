@@ -29,27 +29,37 @@ layout: default
 
         {{ content }}
 
-        <!-- Home Chapter List -->
-        <p>{{ site.title }}</p>
-        {% for chapter in site.chapters limit : 5 %}
+        <!-- Post List -->
+        {% for post in site.posts limit : 5 %}
 
-        <article class="chapter-preview">
-          <a href="{{ chapter.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="chapter-title">{{ chapter.title }}</h2>
-            {% if chapter.subtitle %}
-            <h3 class="chapter-subtitle">{{ chapter.subtitle }}</h3>
+        <article class="post-preview">
+          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% if post.subtitle %}
+            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
             {% else %}
-            <h3 class="chapter-subtitle">{{ chapter.excerpt | strip_html | truncatewords: 15 }}</h3>
+            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
             {% endif %}
           </a>
-          <p class="chapter-meta">
-            {% include read_time.html content=chapter.content %}            
+          <p class="post-meta">Posted by
+            {% if post.author %}
+            {{ post.author }}
+            {% else %}
+            {{ site.author }}
+            {% endif %}
+            on
+            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
           </p>
         </article>
 
         <hr>
 
         {% endfor %}
+
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+        </div>
 
       </div>
     </div>

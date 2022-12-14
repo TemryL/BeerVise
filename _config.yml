@@ -7,7 +7,7 @@ url:                "https://temryl.github.io"
 # Build settings
 markdown:           kramdown
 paginate:           5
-paginate_path:      "/chapters/page:num/"
+paginate_path:      "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
