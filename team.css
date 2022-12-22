@@ -46,7 +46,7 @@ body {
 }
 
 .box:hover {
-    color: white;
+    color: black;
     transition: 0.5s ease;
     position: relative;
     transform: scale(1.1);
@@ -54,28 +54,28 @@ body {
 }
 
 .box:hover:nth-child(1) {
-    background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+    background-image: linear-gradient( 135deg, #ffffff 10%, #ffffff 100%);
     border-bottom-right-radius: 20px;
     border-bottom: 5px solid #00000080;
     border-bottom-left-radius: 20px;
 }
 
 .box:hover:nth-child(2) {
-    background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+    background-image: linear-gradient( 135deg, #ffffff 10%, #ffffff 100%);
     border-bottom-right-radius: 20px;
     border-bottom: 5px solid #00000080;
     border-bottom-left-radius: 20px;
 }
 
 .box:hover:nth-child(3) {
-    background-image: linear-gradient(135deg, #F761A1 10%, #8C1BAB 100%);
+    background-image: linear-gradient( 135deg, #ffffff 10%, #ffffff 100%);
     border-bottom-right-radius: 20px;
     border-bottom: 5px solid #00000080;
     border-bottom-left-radius: 20px;
 }
 
 .box:hover:nth-child(4) {
-    background-image: linear-gradient(135deg, #FFF720 10%, #3CD500 100%);
+    background-image: linear-gradient( 135deg, #ffffff 10%, #ffffff 100%);
     border-bottom-right-radius: 20px;
     border-bottom: 5px solid #00000080;
     border-bottom-left-radius: 20px;
@@ -86,39 +86,4 @@ body {
     box-shadow: 0px 3px 10px 1px rgba(85, 85, 85, 0.27)
 }
 
-.cart-social i {
-    font-size: 25px;
-    margin: 20px;
-
-}
-
-.box:hover .cart-social i.fa-facebook-official,
-.box:hover .cart-social i.fa-instagram,
-.box:hover .cart-social i.fa-twitter-square {
-    background: white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-.cart-social i.fa-facebook-official {
-    font-size: 32px;
-    background: -webkit-linear-gradient(135deg, #52E5E7 10%, #130CB7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.cart-social i.fa-instagram {
-    font-size: 32px;
-    background: -webkit-linear-gradient(135deg, #F761A1 10%, #8C1BAB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.cart-social i.fa-twitter-square {
-    font-size: 32px;
-    background: -webkit-linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
