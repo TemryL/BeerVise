@@ -7,13 +7,13 @@ background: '/img/posts/chapter3.jpg'
 
 <h2 class="section-heading">Into which categories can the users be identified to?</h2>
 
-<p>Now is time to help your supermarket get closer and closer to you...</p><br>
+<p>Now is time to help your supermarket get closer and closer to you...</p>
 
 <p>Once the analysis on the different beer styles carried out and the beers gathered into supra styles, it's time to apply a similar process
 to the users. Indeed, remember that our team promised the supermarket to help it reorganise it's beers' shelves according to the different beers' styles 
 but also depending on the types of beers' consumers the clients are. Thus, for lack of being able to implement a predictive model which recommends a specific
 beer to each user because of the unsufficient personal information about the users, we thought it could be interesting to give the customers 
-the opportunity to identify themselves to certain categories of beers' consumer to helping them in their choice of the most adequate beer.</p><br>
+the opportunity to identify themselves to certain categories of beers' consumer to helping them in their choice of the most adequate beer.</p>
 
 <p>In order to build these categories and let people identify themselves before choosing their beer, we have to rely on some information about people. And the best thing for that is to use the users.csv dataset from BeerAdvocate which in a way represents 
 a sample of all beer consumers' taste in the world. From there, we thought it could be relevant to help the supermarket clients to identify 
@@ -35,7 +35,7 @@ themselves to one of these categories:</p>
     of the number of ratings from our users' dataset. Hence, the number of ratings gives a idea of the contribution of each user 
     and therefore also an idea about how many beers each one actually tasted. Note that this category deals with 
   the level of experience, and not the level of expertise (expert or not) which would depend on the rates actually given 
-  which are much more subjective and therefore not that reliable.</p><br>
+  which are much more subjective and therefore not that reliable.</p>
 
   <h3> Figure: distribution of the number of ratings for the users (Histogram + boxplot) </h3>
   
@@ -53,7 +53,7 @@ themselves to one of these categories:</p>
     Hence, all users with number of ratings outside 1.5 times the interquartile range above the upper quartile are considered as experienced. 
     Therefore, the experienced threshold is set at Q3 + 1.5 * IQR = Q3 + 1.5 * (Q3-Q1) = 16+1.5 * (16-1) = 39. Thus, all users 
 which will have rated more than 39 beers are part of the experienced beer consumers category which represents 15.81% of the total number of users in the dataset. 
-Similarly to the experienced users, all users with number of ratings below the median which is set at 3 ratings are considered as novice beer consumers.</p><br>
+Similarly to the experienced users, all users with number of ratings below the median which is set at 3 ratings are considered as novice beer consumers.</p>
 
 <p> On the other hand, a user is considered as explorator if he tends to rate beers that are not that popular. Thus, similarly to the 
     level of experience, and once the numbe rof ratigns for each beer implmented, we can analyse the distribution of the number 
@@ -73,12 +73,12 @@ of ratings to deduce a threshold. </p>
 <p> In view of the distribution of the the number of ratings per beer, one notices the heavy-tail of the distribution. 
     Thus, almost 75% of the beers have less than 10 ratings which is already almost half of the number of ratings than the least popular 
     beer among all the most rated beers. Thereforen a bit arbitrarly, we consider all beers with under 10 ratings as 'scarce beers'. Thus, 
-    if a user has rated one of these beers, he's considered as an explorator.</p><br>
+    if a user has rated one of these beers, he's considered as an explorator.</p>
 
 <p> Finally, based on the thresholds set right above, the users can be categorised into the different categories. 
     For a better visualisation of the results, the interactive map below will give you an insight about how are 
     the categories represnted in some of the most important countries in the dataset.
-</p><br>
+</p>
 
 
 <img class="img-fluid" src="<div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe title="BASIC MAP" frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/63a4e021811115001101c5c5" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>"
