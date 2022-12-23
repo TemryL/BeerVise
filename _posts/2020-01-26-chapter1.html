@@ -4,10 +4,11 @@ title: "Chapter 1"
 subtitle: "Beer styles at a glimpse"
 background: '/img/posts/chapter1.jpg'
 ---
+
 <style>
     div.graph {
-        border: 5px solid;
-        text-align: center;
+        position: absolute;
+        margin: -100px;
     }
 </style>
 
@@ -89,7 +90,7 @@ background: '/img/posts/chapter1.jpg'
     As a sanity check, we considered once again the projection of those beer styles on a 2-Dimensial space for visualization (PCA).  The objective was to try to see if our new labelling was now more easily revealing itself by comparing the point location in space of the beers pertaining to the same “supra-styles” (same label). It was quite satisfactory indeed as the Figure below witnesses. 
 </p>
 
-<div>
+<div class="graph">
     {% include PCA2.html %}
 </div>
 
