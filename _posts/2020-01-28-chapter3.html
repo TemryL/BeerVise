@@ -24,29 +24,43 @@ themselves to one of these categories:</p>
     <li>Novice beer consumers: For those less accustomed to beer consumption and which are willing to discover this tasty beverage.</li>
     <li>Explorator: For those who want to rediscover beer and trying something new.</li>
     <li>Nationalist: For the ones who always support their country and only want to taste their local beers</li>
-  </ul>  
+</ul>  
 
-  <h2 class="section-heading">But is there a real correlation between the users experience and their taste?</h2>
-  <h3> INSERT LOLA TEXT + FIG regression </h3>
+<h2 class="section-heading">But is there a real correlation between the users experience and their taste?</h2>
 
-  <h2 class="section-heading">Let's now categorise the users</h2>
+<p>
+  Having a very large number of users in our dataset, it is likely that some users might resemble each other. The only information we have about a certain user are his ratings and his birth-country. The birth country is likely to influence a user’s ratings, since a user will probably rate beers from his own country, or in the surrounding countries. The number of ratings of a user indicates a certain level of experience. In fact, users having rated more than 100 different beers might have a different palate than a user having rated less than 10 beers for example. Thus, to determine whether it is relevant to categorize users based on these 2 features, we conducted a few analyses. 
+</p>
 
-  <p>First of all, in order to categorise the users according to their level of experience, it is eseential to analyse the distribution 
-    of the number of ratings from our users' dataset. Hence, the number of ratings gives a idea of the contribution of each user 
-    and therefore also an idea about how many beers each one actually tasted. Note that this category deals with 
-  the level of experience, and not the level of expertise (expert or not) which would depend on the rates actually given 
-  which are much more subjective and therefore not that reliable.</p>
+<p>
+  First, for each user a “favorite style” was determined based on a user’s top-rated beers. We then use a regression analysis to predict the likelihood that a certain beer style will be a user favorite based on his country of origin and number of ratings. The figure bellow shows the regression analyses for four different styles (IPA’s, Belgian-style ales, Stouts and Pilseners) in four different countries (United States, Canada, Belgium and Germany). We can see for example that a user from the United States or Canada is more likely to prefer IPA’s than a user from Germany or Belgium. However, a user from Belgium is much more likely than any of the three other countries to prefer Belgian-style ales. We also notice that the probability of a user to prefer IPA’s decreases with the number of ratings, while stouts are more appreciated by experienced users than novice users. From these observations we can conclude that the preferences of a user are likely to depend on his country of origin and on his level of experience. In fact, users tend to rate mostly beers from their own country. Thus, they are more likely prefer beer styles that are brewed in their country. Moreover, a user’s whim is likely to evolve the more beers he tries. Our observations are consistent with these facts.
+</p>
 
-  <img class="img-fluid" src='/BeerVise/img/chap3_users_distribution.png' width="1200" height="675" alt="users ratings distribution">
-  
-  <p> From the box plot we have that: </p>
-  <ul>
-    <li>Min: 1 rating </li>
-    <li>Q1(25% of users): 1 rating </li>
-    <li>Median(50% of users): 3 ratings</li>
-    <li>Q3(75% of users): 16 ratings</li>
-    <li>Max: 12046 ratings</li>
-  </ul> 
+<img class="img-fluid" src='/BeerVise/img/regression_analyses.png' alt="">
+
+<p>
+  Experience and country of birth are therefore 2 seemingly valid criteria to separate users into categories. However, for user experience, we must choose a threshold for the number of ratings that separates “experienced users” from “non-experienced users”. 
+</p>
+
+
+<h2 class="section-heading">Let's now categorise the users</h2>
+
+<p>First of all, in order to categorise the users according to their level of experience, it is eseential to analyse the distribution 
+  of the number of ratings from our users' dataset. Hence, the number of ratings gives a idea of the contribution of each user 
+  and therefore also an idea about how many beers each one actually tasted. Note that this category deals with 
+the level of experience, and not the level of expertise (expert or not) which would depend on the rates actually given 
+which are much more subjective and therefore not that reliable.</p>
+
+<img class="img-fluid" src='/BeerVise/img/chap3_users_distribution.png' width="1200" height="675" alt="users ratings distribution">
+
+<p> From the box plot we have that: </p>
+<ul>
+  <li>Min: 1 rating </li>
+  <li>Q1(25% of users): 1 rating </li>
+  <li>Median(50% of users): 3 ratings</li>
+  <li>Q3(75% of users): 16 ratings</li>
+  <li>Max: 12046 ratings</li>
+</ul> 
 
 <p>In view of the distribution of the number of ratings for the different users, we consider that a user is categorised 
     as an experienced beer consummer if he's considered as outlier when visualizing the ratings distribution using the boxplot. 
