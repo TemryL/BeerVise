@@ -6,6 +6,36 @@ background: '/img/ipa.png'
 ---
 
 <h2 class="section-heading"> Supra styles in numbers</h2>
+<h3>
+    Analysis of beer styles main production and rating countries
+</h3>
+
+<p>
+    Since the BeerAdvocate dataset contains ratings from users and for beers all around the world, it is interesting to investigate where each beer style is mainly produced and where it is mostly rated. 
+</p>
+
+<p>
+    The first histogram bellow shows the distribution of production countries for the Belgian-Style ales. We observe that they are mostly produced in the United States, Belgium and Canada. The second histogram bellow shows the distribution of rating countries for the Belgian-style ales. We notice they are also mostly rated in the same three countries where they are mostly produced. This makes sense because users from a given country are likely to rate beers from their own country. We can then suppose that they will also prefer beer styles that are produced in their own country.
+</p>
+
+<img class="img-fluid" src='/BeerVise/img/production_countries.png' alt="">
+<img class="img-fluid" src='/BeerVise/img/rating_countries.png' alt="">
+
+<h3>
+    Analysis of supra-styles ratings
+</h3>
+
+<p>
+    Among the 15 supra-styles, we want to observe how the ratings vary from one style to another. The figure bellow shows that most of the ratings for each style lie between 2.4 and 4.6. The mean ratings vary from one supra-style to another, the favorite style being stouts (4.1 on average) and the least favorite being Pilseners and Pale Lagers (3.4 on average). 
+</p>
+
+<img class="img-fluid" src='/BeerVise/img/supra_styles_ratings.png' alt="">
+
+<p>
+    These ratings represent the mean ratings for all the users in BeerAdvocate. However, the preferences of a user in terms of beer styles likely depend on his characteristics. We have 2 main pieces of information about a certain user at our disposal: his country of origin and his ratings. Thus, in the next chapter we will try to group the users based on these 2 features into different categories and analyze how their beer style preferences vary.
+</p>
+
+
 <h2 class="section-heading">Supra styles in words</h2>
 
 <p>
