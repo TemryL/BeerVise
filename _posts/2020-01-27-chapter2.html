@@ -2,9 +2,40 @@
 layout: post
 title: "Chapter 2"
 subtitle: "A description of the supra styles"
-background: '/img/posts/chapter2.jpg'
+background: '/img/ipa.png'
 ---
 
 <h2 class="section-heading"> Supra styles in numbers</h2>
 <h2 class="section-heading">Supra styles in words</h2>
 
+<p>
+    To enhance shopper experience, each beer style that successfully made it to the shelf will be briefly described textually. This will enable customers to get some information on the beer styles they might not be familiar with and guide them through their choice. The description of beer styles is generated directly from the online reviews using Natural Language Processing (NLP). It will be a list of adjectives that are recurrently employed by their peers to describe it.  
+</p>
+
+<p>
+    To obtain this list, several steps have to be taken. Reviews have been collected from the worldwide community of beer drinkers and are hence written in different languages. Since the bulk of them is in English (99,99%), the analysis will be carried out considering only those. Reviews that have been identified as English-written with sufficient confidence are then regrouped by beer styles and stored. 
+</p>
+
+<p>
+    Since we are interested in adjectives only for this analysis, part-of-speech tagging is being used and only tokens that have been identified as such are kept. Adjectives from reviews describing beers from the same supra style are regrouped together since the end goal of this lexical analysis is to have one description per supra style to be displayed on the shelf.
+</p>
+
+<p>
+    We decided to proceed with a TF-IDF approach. This term-weighting scheme relies on the (relative) frequency of terms within a document. Here a document consists of all the reviews collected for beers of one style (supra-style). The frequency of the different adjectives of the document (number of times the adjectives occur within the document) determines the weight of the document vectors. The term frequency is normalized with respect to the maximal frequency of all adjectives occurring within the document. But the caveat of such approach is that adjectives that occur very frequently in description such as “good” or “bad” and do not bring specific insight on the beer style itself will have the bigger weights. Thus, we have not only to consider how frequent an adjective occurs within a document (measure for similarity), but also how frequent this adjective is in the entire document collection made of all the reviews (measure for distinctiveness). The discriminative power of the adjective with respect to the whole document collection needs to be considered. For that purpose, the inverse document frequency is computed and included into the term weight as factor. This automatically reduces the weight for recurrent adjectives that have very little power to disambiguate beer styles. 
+</p>
+
+<p>
+    Note that despite this idf reweighting, some irrelevant adjectives still manage to score high weights. We chose to manually filter them out and keep the 20 adjectives with highest scores for every beer style, that in theory should describe them with highest relevance. This can be illustrated with word clouds where the size of a word is proportional to its associated tf-idf weight. We show below the world cloud for the beer style Indian Pale Ales (IPA).
+</p>
+
+<img class="img-fluid" src='/BeerVise/img/ipa.png' alt="Mean ratings for experienced and novice German users">
+
+<p>
+    For Stouts beers, the world cloud looks like:
+</p>
+
+<img class="img-fluid" src='/BeerVise/img/stouts.png' alt="Mean ratings for experienced and novice German users">
+
+<p>
+    This lexical analysis was quite successful indeed as the retrieved adjectives do seem to describe quite meaningfully the beer style in question!
+</p>
