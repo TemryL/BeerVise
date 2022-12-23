@@ -15,99 +15,104 @@ background: '/img/posts/chapter1.jpg'
 
     div.PCA1 {
         position: absolute;
-        margin-left: -50;
+        margin-left: -100;
         margin-bottom: 25px;
         margin-top: 25px;
     }
     
 </style>
 
-<h2 class="section-heading">THAT’S A LOT OF BEER STYLES..</h2>
+<div>
+    <h2 class="section-heading">THAT’S A LOT OF BEER STYLES..</h2>
 
-<p>
-    Today, more than a hundred of different beer styles have been identified and the explosion of craft brewing has seen the market rapidly growing with the continuous emergence of new beer styles. The type of yeast used during the fermentation process as well as the region of origin, ingredients or brewing method are different factors that contribute to defining a beer style. Brewers are racing to embrace new drinking trends and do not lack imagination to craft their own styles to maintain and attract customers in this competing environment. This diversity and enabled creativity partly explain the increasing popularity of beers and this success does not seem to be showing any signs of slowing down. The community of beer drinkers continues to grow worldwide and is expanding to new populations such as women, millennials, or new ethnic groups. 
-</p>
+    <p>
+        Today, more than a hundred of different beer styles have been identified and the explosion of craft brewing has seen the market rapidly growing with the continuous emergence of new beer styles. The type of yeast used during the fermentation process as well as the region of origin, ingredients or brewing method are different factors that contribute to defining a beer style. Brewers are racing to embrace new drinking trends and do not lack imagination to craft their own styles to maintain and attract customers in this competing environment. This diversity and enabled creativity partly explain the increasing popularity of beers and this success does not seem to be showing any signs of slowing down. The community of beer drinkers continues to grow worldwide and is expanding to new populations such as women, millennials, or new ethnic groups. 
+    </p>
 
-<p>
-    As mentioned before, the dataset that is used to carry out the analysis is the BeerAdvocate one. It totals 104 unique different beer styles. This is quite a high number and lowering it down might prove beneficial for our study for various reasons. Some statistical analyses will be conducted on each beer style individually. Hence each beer style should be represented by a sufficiently high number of beers for our statistical findings to hold. Indeed, statistics are based on a subset of data collected in the population and not on the entire population, hence the samples should adequately represent the actual distribution of data in the population. The amount of data at hand for each beer style varies quite a lot. Take the “Happoshu” for example (a Japanese beer style with less than 67% malt content) which is only represented by 627 datapoints. This problem does not arise with the American IPA beer style which has almost 1 million datapoints. 
-</p>
+    <p>
+        As mentioned before, the dataset that is used to carry out the analysis is the BeerAdvocate one. It totals 104 unique different beer styles. This is quite a high number and lowering it down might prove beneficial for our study for various reasons. Some statistical analyses will be conducted on each beer style individually. Hence each beer style should be represented by a sufficiently high number of beers for our statistical findings to hold. Indeed, statistics are based on a subset of data collected in the population and not on the entire population, hence the samples should adequately represent the actual distribution of data in the population. The amount of data at hand for each beer style varies quite a lot. Take the “Happoshu” for example (a Japanese beer style with less than 67% malt content) which is only represented by 627 datapoints. This problem does not arise with the American IPA beer style which has almost 1 million datapoints. 
+    </p>
 
-<p>
-    Secondly, if we go back to the “endgame” of all this which is to come up with a selection of beer styles to recommend to a specific type of beer drinker, one do not want to be suggesting beer styles that are too close to one another. What a disappointment if the shelf was to come out as a suggestion of American Amber Ale, American Pale Ale, Blonde Ale and English Pale Ale. Those might well be the favourite styles of a drinker category according to the ratings but fall quite close to another in terms of taste. If the shopper does not like Pale Ales or was simply not in the mood for that, it might just go home without his beer and the store will not thank us for that. One of the requirements is indeed to accommodate various palates by promoting diversity through a selection of sufficiently diverse beer styles. 
-</p>
+    <p>
+        Secondly, if we go back to the “endgame” of all this which is to come up with a selection of beer styles to recommend to a specific type of beer drinker, one do not want to be suggesting beer styles that are too close to one another. What a disappointment if the shelf was to come out as a suggestion of American Amber Ale, American Pale Ale, Blonde Ale and English Pale Ale. Those might well be the favourite styles of a drinker category according to the ratings but fall quite close to another in terms of taste. If the shopper does not like Pale Ales or was simply not in the mood for that, it might just go home without his beer and the store will not thank us for that. One of the requirements is indeed to accommodate various palates by promoting diversity through a selection of sufficiently diverse beer styles. 
+    </p>
 
-<p>Our first task will be hence to merge those beer styles in a meaningful way. </p>
+    <p>Our first task will be hence to merge those beer styles in a meaningful way. </p>
 
-<p>
-    The features of the beer style at our disposal are:
-    <ul>
-        <li>the average alcohol by volume (alcohol content) the beers of that style have,</li>
-        <li>the average rating in terms of appearance the beers of that style have received,</li>
-        <li>the average rating in terms of aroma,</li>
-        <li>the average rating in terms of palate,</li>
-        <li>the average rating in terms of overall impression, </li>
-        <li>the average of those 5 ratings.</li>
-    </ul> 
-</p>
+    <p>
+        The features of the beer style at our disposal are:
+        <ul>
+            <li>the average alcohol by volume (alcohol content) the beers of that style have,</li>
+            <li>the average rating in terms of appearance the beers of that style have received,</li>
+            <li>the average rating in terms of aroma,</li>
+            <li>the average rating in terms of palate,</li>
+            <li>the average rating in terms of overall impression, </li>
+            <li>the average of those 5 ratings.</li>
+        </ul> 
+    </p>
 
-<p>
-    The attributes that we have at our disposal are mainly subjective ratings of different aspects (appearance, aroma, palate, taste, and overall impression) given by users and except the ‘abv’ do not consist of “physical” properties of the beer styles like colours, ingredients or fermentation process would be. We aim at merging styles that resemble one another and resemblance would be potentially more easily determined which such physical properties. Given our features, our model hence relies on the fact that beer styles that obtain similar ratings should themselves be similar. At first we resorted to Principal Component Analysis (PCA), a linear dimensionality reduction technique that can extract features by exploiting correlation across datapoints. By projecting the dataset onto a 2-Dimensional space, we were hoping to be able to visualize some meaningful repartition of datapoints in clusters that could indicate the presence of similarity between beer styles. This was not very conclusive as the majority of points were forming one big cluster (cf. Figure below) and sub clusters were hence hardly distinguishable.
-</p>
+    <p>
+        The attributes that we have at our disposal are mainly subjective ratings of different aspects (appearance, aroma, palate, taste, and overall impression) given by users and except the ‘abv’ do not consist of “physical” properties of the beer styles like colours, ingredients or fermentation process would be. We aim at merging styles that resemble one another and resemblance would be potentially more easily determined which such physical properties. Given our features, our model hence relies on the fact that beer styles that obtain similar ratings should themselves be similar. At first we resorted to Principal Component Analysis (PCA), a linear dimensionality reduction technique that can extract features by exploiting correlation across datapoints. By projecting the dataset onto a 2-Dimensional space, we were hoping to be able to visualize some meaningful repartition of datapoints in clusters that could indicate the presence of similarity between beer styles. This was not very conclusive as the majority of points were forming one big cluster (cf. Figure below) and sub clusters were hence hardly distinguishable.
+    </p>
+</div>
 
 <div class="PCA1">
     {% include PCA1.html %}
 </div>
 
+<div>
+    <p>
+        We next tried to project with non-linear techniques such as t-Distributed Stochastic Neighbour Embedding (t-SNE) or Uniform Manifold Approximation and Projection (UMAP) but this was not really successful either.  We applied K-Means to directly retrieve clusters based on distance between points. Some clusters were indeed making a bit of sense such as ones regrouping some Stouts together, Barleywines, Lambics or Ales but overall, that was a bit deceiving too. 
+    </p>
 
-<p>
-    We next tried to project with non-linear techniques such as t-Distributed Stochastic Neighbour Embedding (t-SNE) or Uniform Manifold Approximation and Projection (UMAP) but this was not really successful either.  We applied K-Means to directly retrieve clusters based on distance between points. Some clusters were indeed making a bit of sense such as ones regrouping some Stouts together, Barleywines, Lambics or Ales but overall, that was a bit deceiving too. 
-</p>
+    <p>
+        One possible explanation for those poor results might be the following. We said that beer styles that obtain similar ratings should themselves be similar. The problem in this is that users are rated according to their subjective preferences and might very well differ regarding them. Take two very different beer styles (like a Belgian Dark Ale (strong) vs New England IPA (soft)), one hated by the first half of the population (rated 0/5) and loved by the second half (rated 5/5), the other one loved by the second half and hated by the first half. Those two very different beer styles will each get the same rating: 2.5… We thus need to consider ratings that are given in a coherent manner, for example by users sharing similar appreciation of beers. The corrected assumption could more be something like: beer styles that obtain similar ratings by similar users should themselves be similar. Repeating the analysis above but only considering ratings from similar users could be done provided well defined categories of users but we decided to take another approach. 
+    </p>
 
-<p>
-    One possible explanation for those poor results might be the following. We said that beer styles that obtain similar ratings should themselves be similar. The problem in this is that users are rated according to their subjective preferences and might very well differ regarding them. Take two very different beer styles (like a Belgian Dark Ale (strong) vs New England IPA (soft)), one hated by the first half of the population (rated 0/5) and loved by the second half (rated 5/5), the other one loved by the second half and hated by the first half. Those two very different beer styles will each get the same rating: 2.5… We thus need to consider ratings that are given in a coherent manner, for example by users sharing similar appreciation of beers. The corrected assumption could more be something like: beer styles that obtain similar ratings by similar users should themselves be similar. Repeating the analysis above but only considering ratings from similar users could be done provided well defined categories of users but we decided to take another approach. 
-</p>
+    <p>
+        We decided to rely on domain experts to create those groupings of beer styles in “supra-styles” (see <a href="https://www.craftbeer.com/beer/beer-styles-guide">here</a>). Following their conclusions, 15 “supra-styles” have been chosen. We list them below:
+        <ul>
+            <li>Pale Ales</li>
+            <li>Dark Lagers</li>
+            <li>Brown Ales</li>
+            <li>India Pale Ales</li>
+            <li>Wheat Beers</li>
+            <li>Strong Ales</li>
+            <li>Belgian Styles</li>
+            <li>Hybrid Beers</li>
+            <li>Porters</li>
+            <li>Stouts</li>
+            <li>Bocks</li>
+            <li>Scottish-Style Ales</li>
+            <li>Wild/Sour Beers</li>
+            <li>Pilseners and Pale Lagers</li>
+            <li>Specialty Beers</li>
+        </ul> 
+    </p>
 
-<p>
-    We decided to rely on domain experts to create those groupings of beer styles in “supra-styles” (see <a href="https://www.craftbeer.com/beer/beer-styles-guide">here</a>). Following their conclusions, 15 “supra-styles” have been chosen. We list them below:
-    <ul>
-        <li>Pale Ales</li>
-        <li>Dark Lagers</li>
-        <li>Brown Ales</li>
-        <li>India Pale Ales</li>
-        <li>Wheat Beers</li>
-        <li>Strong Ales</li>
-        <li>Belgian Styles</li>
-        <li>Hybrid Beers</li>
-        <li>Porters</li>
-        <li>Stouts</li>
-        <li>Bocks</li>
-        <li>Scottish-Style Ales</li>
-        <li>Wild/Sour Beers</li>
-        <li>Pilseners and Pale Lagers</li>
-        <li>Specialty Beers</li>
-    </ul> 
-</p>
+    <p>
+        We were able to confidently assign a supra-style to 91 beers styles out of the 104 present in the data (87,5%). 13 styles seem to not be matching any descriptions of the supra-styles. 
+    </p>
 
-<p>
-    We were able to confidently assign a supra-style to 91 beers styles out of the 104 present in the data (87,5%). 13 styles seem to not be matching any descriptions of the supra-styles. 
-</p>
+    <p>
+        After some research, it came out that those beer styles were indeed quite singular which explains why they could not be fitted. This is for example the case of the “Kvass” (a Russian fermented cereal-based beer) or the Bière de Champagne which follows the same fermentation process as Champagne does. Hence, we decided to create a 16th supra-style which is “Undefined” and contains them. 
+    </p>
 
-<p>
-    After some research, it came out that those beer styles were indeed quite singular which explains why they could not be fitted. This is for example the case of the “Kvass” (a Russian fermented cereal-based beer) or the Bière de Champagne which follows the same fermentation process as Champagne does. Hence, we decided to create a 16th supra-style which is “Undefined” and contains them. 
-</p>
-
-<p>
-    As a sanity check, we considered once again the projection of those beer styles on a 2-Dimensial space for visualization (PCA).  The objective was to try to see if our new labelling was now more easily revealing itself by comparing the point location in space of the beers pertaining to the same “supra-styles” (same label). It was quite satisfactory indeed as the Figure below witnesses. 
-</p>
+    <p>
+        As a sanity check, we considered once again the projection of those beer styles on a 2-Dimensial space for visualization (PCA).  The objective was to try to see if our new labelling was now more easily revealing itself by comparing the point location in space of the beers pertaining to the same “supra-styles” (same label). It was quite satisfactory indeed as the Figure below witnesses. 
+    </p>
+</div>
 
 <div class="PCA2">
     {% include PCA2.html %}
 </div>
 
-<p>
-    If you consider for example the projections on the third and fourth PCA components (row: PC4, col:PC3), this was quite noticeable given our new labelling. Beer styles belonging to the same supra-styles (now that we know them) were indeed falling rather close to one another, like the Strong Ales, the Speciality beers, the Dark Lagers, the Hybrid beers or the Pilseners and Lagers
-</p>
+<div>
+    <p>
+        If you consider for example the projections on the third and fourth PCA components (row: PC4, col:PC3), this was quite noticeable given our new labelling. Beer styles belonging to the same supra-styles (now that we know them) were indeed falling rather close to one another, like the Strong Ales, the Speciality beers, the Dark Lagers, the Hybrid beers or the Pilseners and Lagers
+    </p>
 
-<p>
-    Now that the beer styles have been successfully merged in supra-styles, the subsequent analysis will be done with them. 
-</p>
+    <p>
+        Now that the beer styles have been successfully merged in supra-styles, the subsequent analysis will be done with them. 
+    </p>
+</div>
