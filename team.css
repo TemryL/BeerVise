@@ -11,7 +11,7 @@
 
 .box {
     padding: 20px;
-    margin: 0 35px;
+    margin: 0px 35px 35px 0px;
     text-align: center;
     box-shadow: 0 0 15px 1px #b5b5b58c;
     border-radius: 2px;
