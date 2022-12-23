@@ -37,7 +37,7 @@ background: '/img/posts/chapter1.jpg'
     The attributes that we have at our disposal are mainly subjective ratings of different aspects (appearance, aroma, palate, taste, and overall impression) given by users and except the ‘abv’ do not consist of “physical” properties of the beer styles like colours, ingredients or fermentation process would be. We aim at merging styles that resemble one another and resemblance would be potentially more easily determined which such physical properties. Given our features, our model hence relies on the fact that beer styles that obtain similar ratings should themselves be similar. At first we resorted to Principal Component Analysis (PCA), a linear dimensionality reduction technique that can extract features by exploiting correlation across datapoints. By projecting the dataset onto a 2-Dimensional space, we were hoping to be able to visualize some meaningful repartition of datapoints in clusters that could indicate the presence of similarity between beer styles. This was not very conclusive as the majority of points were forming one big cluster (cf. Figure below) and sub clusters were hence hardly distinguishable.
 </p>
 
-<object id=pca1 type="text/html" data="../graphs/PCA1.html" width=1500, height=900></object>
+{% include PCA1.html %}
 
 <p>
     We next tried to project with non-linear techniques such as t-Distributed Stochastic Neighbour Embedding (t-SNE) or Uniform Manifold Approximation and Projection (UMAP) but this was not really successful either.  We applied K-Means to directly retrieve clusters based on distance between points. Some clusters were indeed making a bit of sense such as ones regrouping some Stouts together, Barleywines, Lambics or Ales but overall, that was a bit deceiving too. 
